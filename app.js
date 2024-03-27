@@ -13,7 +13,11 @@ cron.schedule('*/10 * * * *', () => {
 // ROUTES
 
 app.get('/', (req, res) => {
-  res.send('Welcome to Bookmarks App')
+  res.send('Welcome to Cron App')
+})
+
+app.get('/cron', (req, res) => {
+  res.send('I am still running!!!!!')
 })
 
 // 404 PAGE
