@@ -7,8 +7,6 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const cron = require('node-cron')
-
 cron.schedule('*/10 * * * *', () => {
   const currentTime = new Date().toLocaleString('en-US', {
     timeZone: 'America/New_York',
