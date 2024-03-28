@@ -7,8 +7,13 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+const cron = require('node-cron')
+
 cron.schedule('*/10 * * * *', () => {
-  console.log('running a task every 10 minutes')
+  const currentTime = new Date().toLocaleString('en-US', {
+    timeZone: 'America/New_York',
+  })
+  console.log(`Running a task every 10 minutes. Current time: ${currentTime}`)
 })
 // ROUTES
 
